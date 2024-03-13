@@ -4,6 +4,8 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -14,7 +16,6 @@ public class IndexSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public IndexSubsystem() {
     indexMotor = new WPI_VictorSPX(1000);
-    indexMotor = new WPI_vC
 
   }
 
