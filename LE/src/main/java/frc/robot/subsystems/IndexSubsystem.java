@@ -16,6 +16,7 @@ public class IndexSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public IndexSubsystem() {
     indexMotor = new WPI_VictorSPX(1000);
+    
 
   }
 
