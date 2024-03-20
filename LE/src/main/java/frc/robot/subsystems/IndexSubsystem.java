@@ -16,14 +16,25 @@ public class IndexSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public IndexSubsystem() {
     indexMotor = new WPI_VictorSPX(1000);
-    
+  }
+
+  public void IndexMovementForwards(){
+
+    indexMotor.set(1);
 
   }
 
+  public void IndexMovementBackwards(){
 
+    indexMotor.set(-1);
+    
+  }
+  
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
+
 }
