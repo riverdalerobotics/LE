@@ -10,6 +10,7 @@ public class OperatorInput {
 
     public OperatorInput() {
         driverController = new XboxController(1);
+    
     }
 
     /**
@@ -33,5 +34,11 @@ public class OperatorInput {
     public boolean PnematicMovementBButton(){
 
         return driverController.getBButton();
+    }
+    public double ChassisSpeedThingy(){
+        return driverController.getLeftY();
+    }
+    public double ChassisTurnThingy(){
+        return driverController.getRightX();
     }
 }
