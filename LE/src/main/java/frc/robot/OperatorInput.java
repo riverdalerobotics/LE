@@ -30,8 +30,10 @@ public class OperatorInput {
         return driverController.getLeftTriggerAxis();
     }
 
-    public boolean PnematicMovementBButton(){
-
+   public boolean intakePower(){
         return driverController.getBButton();
-    }
+   }
+   public boolean piston(){
+        return driverController.getAButtonPressed();
+   }
 }
