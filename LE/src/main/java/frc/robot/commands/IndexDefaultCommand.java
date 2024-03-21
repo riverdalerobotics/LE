@@ -10,6 +10,8 @@ import frc.robot.subsystems.IndexSubsystem;
 
 public class IndexDefaultCommand extends Command {
 
+  OperatorInput oi;
+  IndexSubsystem index;
   /** Creates a new IndexDefaultCommand. */
   public IndexDefaultCommand(IndexSubsystem indexMovement, OperatorInput OI) {
     // Use addRequirements() here to declare subsystem dependencies.
@@ -21,7 +23,14 @@ public class IndexDefaultCommand extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+
+    //moves index Forwards
+    index.setIndexSpeed(oi.indexForwardMovementLeftTrigger());
+
+    //moves index Backwards
+    index.setIndexSpeed(oi.indexBackwardMovementRightTrigger());
+  }
 
   // Called once the command ends or is interrupted.
   @Override

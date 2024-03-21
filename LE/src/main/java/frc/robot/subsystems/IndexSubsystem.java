@@ -13,23 +13,29 @@ public class IndexSubsystem extends SubsystemBase {
 
     WPI_VictorSPX indexMotor;
 
-  /** Creates a new ExampleSubsystem. */
+    /**sets indexMotor to speed parameter
+   * Takes a Double
+   */
+  public void setIndexSpeed(double speed){
+
+    indexMotor.set(speed);
+  }
+
   public IndexSubsystem() {
-    indexMotor = new WPI_VictorSPX(1000);
+    indexMotor = new WPI_VictorSPX(-1000);
   }
 
   public void IndexMovementForwards(){
 
-    indexMotor.set(1);
+    setIndexSpeed(0.1);
 
   }
 
   public void IndexMovementBackwards(){
 
-    indexMotor.set(-1);
+    setIndexSpeed(-0.1);
     
   }
-  
 
   @Override
   public void periodic() {
