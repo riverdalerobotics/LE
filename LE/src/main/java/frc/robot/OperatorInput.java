@@ -9,26 +9,25 @@ public class OperatorInput {
     
 
     public OperatorInput() {
-        driverController = new XboxController(1);
-    
+        driverController = new XboxController(0);
     }
 
     /**
-     * Blah blah blH
+     * Moves Index Forwards
      * @return
      */
-    public double IndexForwardMovementLeftTrigger(){
+    public double indexForwardMovementLeftTrigger(){
 
         return driverController.getLeftTriggerAxis();
     }
 
     /**
-     * jhsdkhfshdfkshdf
+     * Moves Index Backwards
      * @return
      */
-    public double IndexBackwardMovementRightTrigger(){
+    public double indexBackwardMovementRightTrigger(){
 
-        return driverController.getLeftTriggerAxis();
+        return -driverController.getRightTriggerAxis();
     }
 
     public boolean PnematicMovementBButton(){
