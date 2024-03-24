@@ -14,6 +14,8 @@ public class IndexDefaultCommand extends Command {
   IndexSubsystem index;
   /** Creates a new IndexDefaultCommand. */
   public IndexDefaultCommand(IndexSubsystem indexMovement, OperatorInput OI) {
+    this.oi = OI;
+    this.index = indexMovement;
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
