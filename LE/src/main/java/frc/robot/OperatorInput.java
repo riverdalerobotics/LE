@@ -33,6 +33,8 @@ public class OperatorInput {
    public boolean intakePower(){
         return driverController.getBButton();
    }
+
+   //LIAM COMMENT: Method names should start lowercase
     public double ChassisSpeedThingy(){
         return driverController.getLeftY();
     }
