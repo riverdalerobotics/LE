@@ -19,7 +19,7 @@ public class IntakeSubsystem extends SubsystemBase {
   Value pistonState;
   /** Creates a new IntakeSubsystem. */
   public IntakeSubsystem() {
-    intakeMotor = new WPI_VictorSPX(0);
+    intakeMotor = new WPI_VictorSPX(30);
     pistonState = Value.kForward;
     piston = new DoubleSolenoid(PneumaticsModuleType.REVPH, 0, 1);
 

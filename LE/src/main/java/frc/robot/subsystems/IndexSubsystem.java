@@ -22,7 +22,7 @@ public class IndexSubsystem extends SubsystemBase {
   }
 
   public IndexSubsystem() {
-    indexMotor = new WPI_VictorSPX(-1000);
+    indexMotor = new WPI_VictorSPX(40);
   }
 
   public void IndexMovementForwards(){
