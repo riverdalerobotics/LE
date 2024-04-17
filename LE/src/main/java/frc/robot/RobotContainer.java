@@ -5,11 +5,14 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.commands.Autos;
-import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.ChassisDefaultCommand;
 import frc.robot.commands.IndexDefaultCommand;
-import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.commands.IntakeDefaultCommand;
+import frc.robot.commands.ShooterDefaultCommand;
+import frc.robot.subsystems.ChassisSubsystem;
+import frc.robot.subsystems.IndexSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -22,16 +25,26 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
+  //private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
   private final OperatorInput oi = new OperatorInput();
   private final IntakeSubsystem INTAKE = new IntakeSubsystem();
+  private final ChassisSubsystem CHASSIS = new ChassisSubsystem();
+  private final IndexSubsystem INDEX = new IndexSubsystem();
+  private final ShooterSubsystem SHOOTER = new ShooterSubsystem();
+
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    m_exampleSubsystem.setDefaultCommand(new IndexDefaultCommand(null, oi));
+   // m_exampleSubsystem.setDefaultCommand(new IndexDefaultCommand(null, oi));
     // Configure the trigger bindings
     configureBindings();
+
+    CHASSIS.setDefaultCommand(new ChassisDefaultCommand(CHASSIS, oi));
+    INTAKE.setDefaultCommand(new IntakeDefaultCommand(oi, INTAKE));
+    INDEX.setDefaultCommand(new IndexDefaultCommand(INDEX, oi)); 
+    SHOOTER.setDefaultCommand(new ShooterDefaultCommand(SHOOTER, oi));
+
   }
 
   /**
@@ -45,8 +58,8 @@ public class RobotContainer {
    */
   private void configureBindings() {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
-    new Trigger(m_exampleSubsystem::exampleCondition)
-        .onTrue(new ExampleCommand(m_exampleSubsystem));
+    // new Trigger(m_exampleSubsystem::exampleCondition)
+    //     .onTrue(new ExampleCommand(m_exampleSubsystem));
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
@@ -58,8 +71,9 @@ public class RobotContainer {
    *
    * @return the command to run in autonomous
    */
-  public Command getAutonomousCommand() {
-    // An example command will be run in autonomous
-    return Autos.exampleAuto(m_exampleSubsystem);
-  }
+  // public Command getAutonomousCommand() {
+  //   // An example command will be run in autonomous
+  //  // return Autos.exampleAuto(m_exampleSubsystem);
+   
+  // }
 }

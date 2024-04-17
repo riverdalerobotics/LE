@@ -6,10 +6,12 @@ import edu.wpi.first.wpilibj.XboxController;
 
 public class OperatorInput {
     XboxController driverController;
+    XboxController intakeController;
     
 
     public OperatorInput() {
         driverController = new XboxController(0);
+        intakeController = new XboxController(1);
     }
 
     /**
@@ -44,5 +46,10 @@ public class OperatorInput {
    public boolean piston(){
         return driverController.getAButtonPressed();
    }
+
+public double moveShooter() {
+    // TODO Auto-generated method stub
+    return intakeController.getRightY();
+}
 }
 
